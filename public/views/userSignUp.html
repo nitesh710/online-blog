@@ -1,0 +1,41 @@
+<toaster-container></toaster-container>
+<div>
+	<div class="card">
+		<div class="card-header"><h2>Register</h2></div>
+		<div class="card-body">
+			<form name="userSignUpForm" ng-submit="registerUser()" novalidate>
+				<div class="form-group">
+					<label for="name">Full Name</label>
+					<input type="text" name="name" id="name" autofocus class="form-control" ng-model="user.name" ng-pattern="onlyTextPattern" required>
+					<span ng-if="userSignUpForm.name.$error.required && userSignUpForm.name.$dirty">
+						<div ng-message="required"><span style="color: red;">*</span>Name is required</div>
+					</span>
+					<span ng-if="userSignUpForm.name.$error.pattern">
+						<div ng-message="required"><span style="color: red;">*</span>Enter valid name</div>
+					</span>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" class="form-control" ng-model="user.email" ng-pattern="emailPattern" required>
+					<span ng-if="userSignUpForm.email.$error.required && userSignUpForm.email.$dirty">
+						<div ng-message><span style="color: red;">*</span>Email is Required</div>
+					</span>
+					<span ng-if="userSignUpForm.email.$error.pattern">
+						<div ng-message="required"><span style="color: red;">*</span>Enter valid email</div>
+					</span>
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" class="form-control" ng-model="user.password" ng-pattern="passwordPattern" required>
+					<span ng-if="userSignUpForm.password.$error.required && userSignUpForm.password.$dirty">
+						<div ng-message><span style="color: red;">*</span>Password is required</div>
+					</span>
+					<span ng-if="userSignUpForm.password.$error.pattern">
+						<div ng-message="required"><span style="color: red;">*</span>Password contains special characters</div>
+					</span>
+				</div>
+				<button type="submit" class="btn btn-primary" ng-disabled="userSignUpForm.$invalid">Register</button>
+			</form>
+		</div>
+	</div>
+</div>

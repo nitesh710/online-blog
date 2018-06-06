@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="blogApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Online Blog</title>
+		<!-- Bootstrap CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="bower_components/ng-table/bundles/ng-table.css""/>
+		
+		<!-- Angular CDN -->
+		<link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.min.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.min.js" ></script>
+		<script src="bower_components/AngularJS-Toaster/toaster.min.js"></script>
+		<script src="bower_components/angular-ckeditor/bower_components/ckeditor/ckeditor.js"></script>
+		<script src="bower_components/angular-ckeditor/angular-ckeditor.js"></script>
+		<script src="bower_components/ng-table/bundles/ng-table.js"></script>
+		<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-sanitize.min.js"></script>
+		<script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js"></script>
+		<script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+
+		<!-- Custom JS -->
+		<script src="controllers/homePageController.js"></script>
+		<script src="controllers/userRegisterController.js"></script>
+		<script src="controllers/userLoginController.js"></script>
+		<script src="controllers/articleController.js"></script>
+		<script src="controllers/articleDetailsController.js"></script>
+		<script src="services/articleNameService.js"></script>
+		<script src="services/imageService.js"></script>
+		<script src="app.js"></script>
+		<script src="routes/routes.js"></script>
+
+	</head>
+	<body ng-controller="homePageCtrl">
+		<div class="container">
+			<div ng-include="'partials/header.html'"></div>
+			<div ng-view></div>
+			<div ng-include="'partials/footer.html'"></div>
+		</div>
+	</body>
+</html>
