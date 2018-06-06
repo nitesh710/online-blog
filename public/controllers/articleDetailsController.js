@@ -9,18 +9,6 @@ angular.module('articleDetailsController', [])
             $http.get('/api/getArticle/' + $routeParams.article_id)
                 .then(function onSuccess(response) {
 
-                    // $scope.user_idd = response.data.data.user_id;
-                    
-                    // getImage();
-
-                    // $http.get('/api/getImage/' + $scope.user_idd)
-                    //     .then(function onSuccess(response) {
-                    //         console.log("Image from db", response.data.img);
-                    //         $scope.img = response.data.img;
-                    //     }, function onError(response) {
-                    //         console.log(response.data);
-                    //     });
-
                     console.log("article", response.data);
                     $scope.article = response.data.data;
 
